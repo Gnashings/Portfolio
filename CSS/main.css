@@ -1,0 +1,152 @@
+
+#main-content {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 25px;
+    border-color:black;
+    background-color: tomato;
+    
+    width: 900px;
+    height: fit-content;
+    margin: 0 auto;
+    box-shadow: 0px 4px 2px rgb(0 0 0);
+}
+
+#main-content-text {
+    border-radius: 10px;
+    background-color: LightSalmon;
+    padding: 1rem 3rem 2rem 3rem;
+    margin: 2rem 3rem 3rem 3rem;
+}
+
+#main-content-text > h3 {
+    color:black;
+}
+
+.nav-bar {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    padding: 1em;
+    margin: 0 auto;
+}
+
+.nav-button {
+    margin: auto;
+    text-align: center;
+    padding: 0.5rem;
+    min-width: 8rem;
+    max-width: fit-content;
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: black;
+    background-color: DarkCyan;
+
+    font-size: 2rem;
+    color:white;
+    text-decoration:none;
+    text-shadow:
+    0px 2px 0 #000;  
+    box-shadow: 0px 2px 2px rgb(0 0 0);
+}
+
+.nav-button:hover {
+    background-color:CadetBlue;
+}
+
+.nav-button:active {
+    background-color: teal;
+    box-shadow: 0px 0px 0px rgb(0 0 0);
+}
+
+#content {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+#banner {
+    display:table;
+    background-image: url("/Assets/unknown.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 15rem;
+    color:white;
+    border-style: solid none solid none;
+    border-color: tomato;
+    border-width: 10px;
+}
+
+.banner-text {
+    display:table-cell;
+    vertical-align:middle;
+    text-align: center;
+    color:white;
+    font-size: 10em;
+    text-shadow:
+    0px 5px 1px #000,
+    -1px -1px 1px #000,
+    1px -1px 1px #000,
+    1px 1px 1px #000;  
+}
+
+h1 {
+    text-align: center;
+}
+
+body {
+    margin: 0 auto;
+    min-height: 100vh;
+    max-height: fit-content;
+}
+
+html {
+    background-image: linear-gradient(pink, lightgoldenrodyellow);
+    /*thistle?*/
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-family: 'Courier New', monospace;
+}
+
+main {
+    padding-top: 1em;
+    padding-bottom: 5em;
+}
+
+@media (min-width:1024px) {
+    .nav-bar
+    {
+        width: 900px;
+    }
+	.nav-button
+    {
+		font-size: 1.5rem;
+	}
+
+    .flex-proj-main-child
+    {
+        width: 900px;
+    }
+}
+
+@media (max-width:1024px) {
+	#content 
+    {
+        width: 900px;
+        margin: 0 auto;
+	}
+    #content > p
+    {
+		font-size: 1.4rem;
+	}
+    #main-content-text {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,128 @@
+.flex-proj-main-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: space-around;
+    align-items: stretch;
+
+    max-width: 62em;
+    margin: auto;
+    }
+
+.flex-proj-main-child{
+    order: 0;
+    flex: 1 0 auto;
+
+    align-self: center;
+    align-items: stretch;
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 25px;
+    border-color:black;
+    background-color: tomato;
+
+    width: 900px;
+    height: 250px;
+    margin-bottom: 2em;
+
+    box-shadow: 0px 4px 2px rgb(0 0 0);
+    }
+
+.flex-proj-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: stretch;
+    height: inherit;
+    }
+
+.flex-proj-item:nth-child(1) {
+    order: 0;
+    flex:  0 fit-content;
+    align-self: auto;
+    margin: 5px;
+    }
+
+.flex-proj-item:nth-child(2){
+    order: 1;
+    flex: 1 1 auto;
+    align-self: auto;
+    background: lightsalmon;
+    width: 20em;
+    margin-left: 1em;
+    padding: 1em;
+    font-family: 'Courier New', monospace;
+    color: black;
+    }
+
+.flex-proj-item:nth-child(3){
+    order: 2;
+    flex: 1 1 auto;
+    align-self: center;
+    text-align: center;
+    margin: 5px;
+
+    }
+
+.proj-img
+{
+    max-width: 100%;
+    max-height: 100%;
+    border-style: unset;
+    border-radius: 20px;
+}
+
+.proj-button
+{
+    display: block;
+
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: teal;
+    background-color: teal;
+    
+    padding: 5px;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+.proj-button:hover {
+    border-color:gold;
+}
+
+.proj-button:active {
+    background-color: gold;
+}
+
+h2
+{
+    margin-block-start: 0.15em;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: underline;
+}
+@media (max-width:1024px) {
+    .flex-proj-main-child{
+        height: auto;
+        }
+    .flex-proj-item:nth-child(1) {
+        order: 0;
+        flex: 0 fit-content;
+        align-self: center;
+    }
+    .flex-proj-item:nth-child(2){
+        font-size: 1.9em;
+        margin: 0 auto;
+        padding: 2px;
+        }
+    
+    .flex-proj-item:nth-child(3){
+        width: 90px;
+        }
+}
