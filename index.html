@@ -29,10 +29,36 @@
             <div id="main-content-text">
                 <h2>Currently working on...</h2>
                 <p>
-                    <span style="font-style: italic;"">Alchemist's Ascension</span>
+                    <span style="font-style: italic;">Alchemist's Ascension</span>
                     A JRPG style game with turn based combat built within Unreal Engine 5.
                     I'm currently a lead on this project, but I also oversee and provide assistance and guidance to the
                     programming team.
+                </p>
+            </div>
+            <div id="main-content-text">
+                <h2>Building Explosions with Scriptable Objects</h2>
+                <p>
+                    <span style="font-style: italic;">Boom</span>
+                    is a game where you control a tank, and fire at turrets and armored cars. So naturally it needed to
+                    have a ton of explosions, some applying just force, some with certain VFX, most with dealing damage.
+                    Since every explosion needed to have different parameters, I wanted to ensure my designers had
+                    access
+                    to everything from radius to force to VFX.
+                </p>
+                <img class="proj-img" src="Assets/ExplosionSO.png" />
+                <p>
+                    The first thing was to create the scriptable object.
+                    It's pretty simple, the keyword here affect means if
+                    that target will take in physics. All designers had
+                    to do was right click, create a new Scriptable Object,
+                    then apply it to the explosion script.
+                </p>
+                <img class="proj-img" src="Assets/ExplosionEC.png" />
+                <p>
+                    And behind the scenes, I just handled the variables, pretty
+                    standard stuff here, grabbing all GameObjects and placing them
+                    into a foreach loop helped a lot with organizing what to do with
+                    each individual GameObject affected by explosions.
                 </p>
             </div>
         </div>
