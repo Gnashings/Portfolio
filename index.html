@@ -39,22 +39,24 @@
             <!--Alchemist's Ascension Quests-->
             <button type="button" class="collapsible">
                 <i class="arrow down"></i> <span style="text-decoration: underline;">Alchemist's Ascension:</span>
-                Making Quests
+                Creating Quests.
             </button>
             <div class="collapsible-content">
                 <div id="blog-content-text">
-                    <h2>Building Explosions with Scriptable Objects</h2>
+                    <h2>Creating Quests</h2>
                     <p>
-                        <span style="font-style: italic;">Boom</span>
-                        TODO
+                        For <span style="font-style: italic;">Alchemist's Ascension</span>
+                        Worked with the other programmers on my team to bring our questing
+                        system to life. I had written out and UML'd the designs that we programmed,
+                        down here is us showcasing the dialogue for each stage, which we set up with enums.
                     </p>
-                    <img class="proj-img" src="Assets/ExplosionSO.png" />
                     <p>
-                        TODO
+                        We made heavy use of Primary Data Assets, Structs, and Data Tables here to work on what
+                        we have so bar.
                     </p>
-                    <img class="proj-img" src="Assets/ExplosionEC.png" />
+                    <img class="proj-img" src="Assets/unknown_2022.11.18-20.58_1.gif" />
                     <p>
-                        TODO
+                        More to come soon!
                     </p>
                 </div>
             </div>
@@ -74,18 +76,16 @@
                     </p>
                     <img class="proj-img" src="Assets/ObjectPool1.png" />
                     <p>
-                        The first thing was to create the scriptable object.
-                        I ensured all the tooltips here actually showed some useful
-                        information for my designers, just in a parameter wasn't clear.
-                        Now all designers had to do was right click, create a new Scriptable Object,
-                        then apply it to the explosion script.
+                        Object pooling is an optimization technique, where use reusable objects instead
+                        of constantly instantiating the object. So we use it here for projectiles in our game,
+                        but we have to set up these objects, so here we grab each one, set it's attributes,
+                        and set it up in the queue.
                     </p>
-                    <img class="proj-img" src="Assets/ObjectPool1.png" />
+                    <img class="proj-img" src="Assets/ObjectPool2.png" />
                     <p>
-                        And behind the scenes, I just handled the variables, pretty
-                        standard stuff here, grabbing all GameObjects and placing them
-                        into a foreach loop helped a lot with organizing what to do with
-                        each individual GameObject affected by explosions.
+                        Here we actually pop the queued object, set it active, then rotate to the proper position.
+                        Pretty easy stuff, but you just have to be mindful about stopping motion before the bullet
+                        gets called back!
                     </p>
                 </div>
             </div>
