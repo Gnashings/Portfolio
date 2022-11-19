@@ -1,14 +1,14 @@
-
 #main-content {
     border-style: solid;
     border-width: 1px;
     border-radius: 25px;
-    border-color:black;
+    border-color: black;
     background-color: tomato;
-    
+
     width: 900px;
     height: fit-content;
     margin: 0 auto;
+    padding-bottom: 50px;
     box-shadow: 0px 4px 2px rgb(0 0 0);
 }
 
@@ -19,8 +19,15 @@
     margin: 2rem 3rem 3rem 3rem;
 }
 
-#main-content-text > h3 {
-    color:black;
+#blog-content-text {
+    border-radius: 0px 0px 10px 10px;
+    background-color: LightSalmon;
+    padding: 1rem 3rem 2rem 3rem;
+    margin: 0rem 3rem 0rem 3rem;
+}
+
+#main-content-text>h3 {
+    color: black;
 }
 
 .nav-bar {
@@ -48,15 +55,15 @@
     background-color: DarkCyan;
 
     font-size: 2rem;
-    color:white;
-    text-decoration:none;
+    color: white;
+    text-decoration: none;
     text-shadow:
-    0px 2px 0 #000;  
+        0px 2px 0 #000;
     box-shadow: 0px 2px 2px rgb(0 0 0);
 }
 
 .nav-button:hover {
-    background-color:CadetBlue;
+    background-color: CadetBlue;
 }
 
 .nav-button:active {
@@ -71,30 +78,105 @@
 }
 
 #banner {
-    display:table;
+    display: table;
     background-image: url("/Assets/unknown.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
     height: 15rem;
-    color:white;
+    color: white;
     border-style: solid none solid none;
     border-color: tomato;
     border-width: 10px;
 }
 
 .banner-text {
-    display:table-cell;
-    vertical-align:middle;
+    display: table-cell;
+    vertical-align: middle;
     text-align: center;
-    color:white;
+    color: white;
     font-size: 10em;
     text-shadow:
-    0px 5px 1px #000,
-    -1px -1px 1px #000,
-    1px -1px 1px #000,
-    1px 1px 1px #000;  
+        0px 5px 1px #000,
+        -1px -1px 1px #000,
+        1px -1px 1px #000,
+        1px 1px 1px #000;
+}
+
+.collapsible {
+    display: block;
+    position: relative;
+
+    background-color: darkcyan;
+    font-family: 'Courier New', monospace;
+    cursor: pointer;
+    padding: 18px;
+    margin: 0 auto;
+    margin-top: 1em;
+    width: 90%;
+
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1em;
+    color: white;
+    text-decoration: none;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: black;
+    text-shadow: 0px 1px 0 #000;
+    box-shadow: 0px 2px 2px rgb(0 0 0);
+}
+
+.active,
+.collapsible:hover {
+    background-color: CadetBlue;
+}
+
+.collapsible-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+}
+
+.proj-img {
+    max-width: 100%;
+}
+
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    box-shadow: 2px 2px 0px rgb(0 0 0);
+
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    box-shadow: 2px 2px 0px rgb(0 0 0);
+
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    box-shadow: 2px 2px 0px rgb(0 0 0);
+
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    box-shadow: 2px 2px 0px rgb(0 0 0);
 }
 
 h1 {
@@ -121,31 +203,29 @@ main {
 }
 
 @media (min-width:1024px) {
-    .nav-bar
-    {
+    .nav-bar {
         width: 900px;
     }
-	.nav-button
-    {
-		font-size: 1.5rem;
-	}
 
-    .flex-proj-main-child
-    {
+    .nav-button {
+        font-size: 1.5rem;
+    }
+
+    .flex-proj-main-child {
         width: 900px;
     }
 }
 
 @media (max-width:1024px) {
-	#content 
-    {
+    #content {
         width: 900px;
         margin: 0 auto;
-	}
-    #content > p
-    {
-		font-size: 1.4rem;
-	}
+    }
+
+    #content>p {
+        font-size: 1.4rem;
+    }
+
     #main-content-text {
         font-size: 1.2rem;
     }

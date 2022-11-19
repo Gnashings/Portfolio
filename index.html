@@ -12,6 +12,7 @@
     <meta property="og:site_name" content="">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="Scripts/navigation.js"></script>
+    <script src="Scripts/dropdown.js"></script>
 </head>
 
 <body>
@@ -22,7 +23,7 @@
     <main>
 
         <div id="content">
-            <p>hi, i make video games.</p>
+            <p>technical designer</p>
         </div>
 
         <div id="main-content">
@@ -35,34 +36,98 @@
                     programming team.
                 </p>
             </div>
-            <div id="main-content-text">
-                <h2>Building Explosions with Scriptable Objects</h2>
-                <p>
-                    <span style="font-style: italic;">Boom</span>
-                    is a game where you control a tank, and fire at turrets and armored cars. So naturally it needed to
-                    have a ton of explosions, some applying just force, some with certain VFX, most with dealing damage.
-                    Since every explosion needed to have different parameters, I wanted to ensure my designers had
-                    access to everything from radius to force to VFX.
-                </p>
-                <img class="proj-img" src="Assets/ExplosionSO.png" />
-                <p>
-                    The first thing was to create the scriptable object.
-                    I ensured all the tooltips here actually showed some useful
-                    information for my designers, just in a parameter wasn't clear.
-                    Now all designers had to do was right click, create a new Scriptable Object,
-                    then apply it to the explosion script.
-                </p>
-                <img class="proj-img" src="Assets/ExplosionEC.png" />
-                <p>
-                    And behind the scenes, I just handled the variables, pretty
-                    standard stuff here, grabbing all GameObjects and placing them
-                    into a foreach loop helped a lot with organizing what to do with
-                    each individual GameObject affected by explosions.
-                </p>
+            <!--Alchemist's Ascension Quests-->
+            <button type="button" class="collapsible">
+                <i class="arrow down"></i> <span style="text-decoration: underline;">Alchemist's Ascension:</span>
+                Making Quests
+            </button>
+            <div class="collapsible-content">
+                <div id="blog-content-text">
+                    <h2>Building Explosions with Scriptable Objects</h2>
+                    <p>
+                        <span style="font-style: italic;">Boom</span>
+                        TODO
+                    </p>
+                    <img class="proj-img" src="Assets/ExplosionSO.png" />
+                    <p>
+                        TODO
+                    </p>
+                    <img class="proj-img" src="Assets/ExplosionEC.png" />
+                    <p>
+                        TODO
+                    </p>
+                </div>
+            </div>
+            <!--Boom Object Pooling-->
+            <button type="button" class="collapsible">
+                <i class="arrow down"></i> <span style="text-decoration: underline;">BOOM:</span>
+                Optimizing With Object Pooling
+            </button>
+            <div class="collapsible-content">
+                <div id="blog-content-text">
+                    <h2>Optimizing With Object Pooling</h2>
+                    <p>
+                        <span style="font-style: italic;">Boom</span>
+                        is a game where you control a tank, and fire at turrets and armored cars. So naturally it needed
+                        there are a ton of explosions, bullets on the screen, and particle effects. For this project, I
+                        wanted to really try to learn object pooling to save a little performance in the game.
+                    </p>
+                    <img class="proj-img" src="Assets/ObjectPool1.png" />
+                    <p>
+                        The first thing was to create the scriptable object.
+                        I ensured all the tooltips here actually showed some useful
+                        information for my designers, just in a parameter wasn't clear.
+                        Now all designers had to do was right click, create a new Scriptable Object,
+                        then apply it to the explosion script.
+                    </p>
+                    <img class="proj-img" src="Assets/ObjectPool1.png" />
+                    <p>
+                        And behind the scenes, I just handled the variables, pretty
+                        standard stuff here, grabbing all GameObjects and placing them
+                        into a foreach loop helped a lot with organizing what to do with
+                        each individual GameObject affected by explosions.
+                    </p>
+                </div>
+            </div>
+            <!--Boom Scriptable Objects-->
+            <button type="button" class="collapsible">
+                <i class="arrow down"></i> <span style="text-decoration: underline;">BOOM:</span>
+                Building Explosions With Scriptable Objects
+            </button>
+            <div class="collapsible-content">
+                <div id="blog-content-text">
+                    <h2>Building Explosions with Scriptable Objects</h2>
+                    <p>
+                        <span style="font-style: italic;">Boom</span>
+                        is a game where you control a tank, and fire at turrets and armored cars. So naturally it needed
+                        to
+                        have a ton of explosions, some applying just force, some with certain VFX, most with dealing
+                        damage.
+                        Since every explosion needed to have different parameters, I wanted to ensure my designers had
+                        access to everything from radius to force to VFX.
+                    </p>
+                    <img class="proj-img" src="Assets/ExplosionSO.png" />
+                    <p>
+                        The first thing was to create the scriptable object.
+                        I ensured all the tooltips here actually showed some useful
+                        information for my designers, just in a parameter wasn't clear.
+                        Now all designers had to do was right click, create a new Scriptable Object,
+                        then apply it to the explosion script.
+                    </p>
+                    <img class="proj-img" src="Assets/ExplosionEC.png" />
+                    <p>
+                        And behind the scenes, I just handled the variables, pretty
+                        standard stuff here, grabbing all GameObjects and placing them
+                        into a foreach loop helped a lot with organizing what to do with
+                        each individual GameObject affected by explosions.
+                    </p>
+                    <img class="proj-img" src="Assets/ExplosionDT.png" />
+                </div>
             </div>
         </div>
 
     </main>
+
 </body>
 
 </html>
