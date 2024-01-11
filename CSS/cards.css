@@ -1,18 +1,22 @@
-.flex-proj-main-container {
+:root {
+    --com-border-radius: 25px;
+}
+
+.flex-card-main-container {
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-content: space-around;
     align-items: stretch;
 
-    max-width: 62em;
+    max-width: 54em;
     margin: auto;
 }
 
-.flex-proj-main-child {
+.flex-card-main-child {
     order: 0;
-    flex: 1 0 auto;
+    flex: 0 1 auto;
 
     align-self: center;
     align-items: stretch;
@@ -23,60 +27,66 @@
     border-color: black;
     background-color: tomato;
 
-    width: 900px;
-    height: 250px;
+    width: 400px;
     margin-bottom: 2em;
 
     box-shadow: 0px 4px 2px rgb(0 0 0);
 }
 
-.flex-proj-container {
+.flex-card-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-content: center;
     align-items: stretch;
     height: inherit;
+
 }
 
-.flex-proj-item:nth-child(1) {
+.flex-card-item:nth-child(1) {
     order: 0;
     flex: 0 fit-content;
     align-self: auto;
-    margin: 5px;
+    min-height: 200px;
+    border: 10px;
+    border-top-left-radius: var(--com-border-radius);
+    border-top-right-radius: var(--com-border-radius);
+    padding: 15px;
+    /*background-image: url("/Assets/tankgame.png");*/
+    background-size: cover;
+    background-clip: border-box;
 }
 
-.flex-proj-item:nth-child(2) {
+.flex-card-item:nth-child(2) {
     order: 1;
     flex: 1 1 auto;
     align-self: auto;
     background: lightsalmon;
-    width: 75em;
-    margin-left: 1em;
-    padding: 1em;
+    padding: 0.5em;
     font-family: 'Courier New', monospace;
     color: black;
 }
 
-.flex-proj-item:nth-child(3) {
+.flex-card-item:nth-child(3) {
     order: 2;
     flex: 1 1 auto;
     align-self: center;
     text-align: center;
+    width: 80%;
     margin: 5px;
 
 }
 
-.proj-img {
+.card-img {
     max-width: 100%;
     max-height: 100%;
     border-style: unset;
     border-radius: 20px;
 }
 
-.proj-button {
-    display: block;
+.card-button {
+    display: inline-block;
 
     border-style: solid;
     border-width: 1px;
@@ -88,20 +98,22 @@
     font-weight: bold;
     color: white;
 
-    padding: 15px 5px 0px 5px;
-    width: 100px;
-    height: 30px;
-    margin: 0 auto;
-    margin-bottom: 1rem;
+    padding: 15px 5px 15px 5px;
+    width: 100%;
+    margin: 1rem 0 1rem 0;
 
     box-shadow: 0px 2px 2px rgb(0 0 0);
 }
 
-.proj-button:hover {
+.card-button-img {
+    height: 100%;
+}
+
+.card-button:hover {
     background-color: CadetBlue;
 }
 
-.proj-button:active {
+.card-button:active {
     background-color: teal;
     box-shadow: 0px 0px 0px rgb(0 0 0);
 }
@@ -109,28 +121,23 @@
 h2 {
     margin-block-start: 0.15em;
     font-weight: normal;
-    text-align: center;
+    text-align: left;
     text-decoration: underline;
 }
 
 @media (max-width:1024px) {
-    .flex-proj-main-child {
+    .flex-card-main-child {
         height: auto;
+        width: 100%;
+        font-size: 3em;
     }
 
-    .flex-proj-item:nth-child(1) {
+    .flex-card-item:nth-child(1) {
         order: 0;
         flex: 0 fit-content;
-        align-self: center;
     }
 
-    .flex-proj-item:nth-child(2) {
-        font-size: 1.9em;
-        margin: 0 auto;
-        padding: 2px;
-    }
+    .flex-card-item:nth-child(2) {}
 
-    .flex-proj-item:nth-child(3) {
-        width: 90px;
-    }
+    .flex-card-item:nth-child(3) {}
 }

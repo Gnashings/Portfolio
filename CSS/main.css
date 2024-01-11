@@ -41,6 +41,16 @@
     margin: 0 auto;
 }
 
+.return-bar {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    margin: 0 auto;
+}
+
 .nav-button {
     margin: auto;
     text-align: center;
@@ -79,7 +89,8 @@
 
 #banner {
     display: table;
-    background-image: url("/Assets/unknown.png");
+    /*background-image: url("/Assets/unknown.png");*/
+    background-image: linear-gradient(rgb(123, 88, 109), rgb(255, 99, 33));
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -97,6 +108,8 @@
     text-align: center;
     color: white;
     font-size: 10em;
+    line-height: 15rem;
+    font-size: 3.5vw;
     text-shadow:
         0px 5px 1px #000,
         -1px -1px 1px #000,

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/CSS/main.css">
+    <link rel="icon" href="">
+    <meta property="og:image" content="">
+    <meta property="og:image:secure_url" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/Scripts/navigation.js"></script>
+</head>
+
+<body>
+    <div id="navigation"></div>
+    <div id="banner">
+        <span class="banner-text">A Hellish Shader!</span>
+    </div>
+    <main>
+
+        <div id="content">
+            <p>Nothing but flats and shadows!</p>
+        </div>
+
+        <div id="main-content">
+            <div id="main-content-text">
+                <h2>Project Overview</h2>
+                <p>
+                    <b>Languages and Tools:</b> C#, HLSL in Unity 2020.
+                </p>
+                <p>
+                    <b>Team Size:</b> Me!
+                </p>
+                <p>
+                    <b>Personal Responsibilities:</b> Developing a Mike Mignola inspired shader.
+                </p>
+                <p>
+                    <b>Status:</b> Completed.
+                </p>
+
+                <hr>
+                - explain the intent
+                - explain the process
+                - explain what you'd change
+                <p>
+                    This is my first completed shader! This shader came about because I was originally trying to update
+                    the visuals in another project. However I decided on turning this whole process as a standalone
+                    project(for reasons I'll delve into later on).
+                </p>
+                <p>
+                    The intent here was to develop a shader inspired by Mike
+                    Mignolas artwork.
+                    Mike Mignola is the creator Hellboy, and I've been a massive fan of his work for some time.
+                    His style features heavy, almost overpowering black shadows, minimal linework, and strong contrasts.
+                </p>
+                <img class="proj-img" src="../Assets/Hellboy-Origin-story.webp" />
+                <br>
+                <br>
+
+                <h2>Breaking down the Style</h2>
+                <p>
+                    Recreating an artists style with a shader involves breaking down all the elements that make up that
+                    style first. So I was trying to discover all the common elements that really made Mignolas work
+                    stand out.
+                </p>
+                <img class="proj-img" src="../Assets/HBY25YC_HBYICM_FC_FNL.jpg" />
+                <p>
+                    Obviously the shadows are one of the main focal points here, but it's also worth noting that
+                    Mignolas work
+                    varies in the amount of detail depending on the particular piece. From the linework to the use of
+                    pure flats
+                    over a slight gradiant, or the fact that some objects might feature multiple colors over a single
+                    monotone.
+                </p>
+                <!--<img class="proj-img" src="../Assets/Mike-Mignola-2017.jpeg" />-->
+                <img class="proj-img" src="../Assets/Mike-Mignola-hellboy-in-hell.webp" />
+                <img class="proj-img" src="../Assets/HBBOUNCELIGHT.png" />
+                <p>
+                    Not to mention the rimlight that appears in some heavily detailed images. This light is
+                    interesting, as it typically appears in the darkest shadows to draw out more detail.
+                </p>
+                <img class="proj-img" src="../Assets/Mike-Mignola-2017.jpeg" />
+                <br>
+                <br>
+
+                <h1>Implimenting the Shader</h1>
+                <p>
+                    So for my shader, I wanted to feature the heavy black shadows, flat colors, and somehow implimenting
+                    that shadowy rimlight. Additionally, I'd have to draw outlines to really nail that comic book look.
+                </p>
+                <p>
+                    Again, this project branched off from another. That original shader was a Lit shader that took some
+                    notes from toon style shaders, the shadows were stepped and based off the diffuse instead of using a
+                    ramp texture. I specifically did this because I was able to target where the lighting could be cut
+                    off on a per-object basis. I also had a rimlight that only appeared in the diffuse that can be
+                    recolored, and an outline that was drawn drawn from a models backface, but had to be thrown on each
+                    object manually.
+                </p>
+                <img class="proj-img" src="../Assets/AHS-Pass0.png" />
+                <p>
+                    Not great, but it was a start.
+                </p>
+                <br>
+
+                <h2>Shadow Rimlights</h2>
+                <p>
+                    The next stage here was to draw out detail in the shadow, I needed that rimlight to appear ONLY in
+                    the darkest areas in the shadow. I was able to do this by taking the fresnel effect I had in the
+                    diffuse, and multiplying the values in the dot product by -1.
+                </p>
+                <img class="proj-img" src="../Assets/AHS-ReverseFresnel.png" />
+                <p>
+                    Here's the result down below, I was pretty happy with it! Additionally I could change the colors if
+                    necessary.
+                </p>
+                <img class="proj-img" src="../Assets/AHS-Pass1.png" />
+                <br>
+
+                <h2>Outlines and Self Shadows</h2>
+                <p>
+                    Now in the previous images, it's pretty obvious that drawing outlines from a models backface is kind
+                    of not... great. There are a lot of holes to be filled, and the effect doesn't look good. So I
+                    sought to fix this by using a Sobel filter as a post processing effect. The filter runs through the
+                    depth texture to draw outlines, but also runs over opaque textures to sample color, all these values
+                    can be tweaked independently.
+                </p>
+                <p>
+                    Additionally, there is a slight self-shadowing effect with lit shaders that heavily impedes the
+                    Sobel filters ability to draw outlines. So it was at this point that I converted the shader from lit
+                    to unlit. Which had a few trade offs, I gained a nice flat tone for my shader, and the shadow
+                    artifacts were gone, which is exactly what I wanted, but the shader lost the ability to receive
+                    shadows... There are a few fixes for this,
+                    however I was warned by several others that the effort to deal with this issue was not worth it.
+                    Either the solution would be wildly harsh on performance, or so tedious that it was simply not worth
+                    the time invested. Regardless, here is the results down below.
+                </p>
+                <img class="proj-img" src="../Assets/AHS-Pass2.png" />
+                <p>
+                    I was liking where this was going! Though, since the Sobel was drawing lines over the specular
+                    lights and wherever colors were meeting, I needed a way to tone it down a bit.
+                </p>
+                <br>
+                <h2>The Final Outcome</h2>
+                <img class="proj-img" src="../Assets/AHS-Pass3.png" />
+                <p>
+                    And here we are! Toned down the Sobel a bit so it'd stop choking the rim-lights, and I included a
+                    few shapes and options with both rimlights on/off. Overall I'm happy with the project, but I'd like
+                    to take another shot at this in the future. With the outlining I'd like to either add a few more
+                    Sobel Filters that handle different things, or maybe find another solution for the outlining.
+                    Additionally I'd like to resolve the self-shadowing somehow, so I think I'll have another
+                    go at this with another version of Unity.
+                </p>
+
+            </div>
+            <div class="return-bar">
+                <a class="nav-button" href="/projects.html">Return to Projects</a>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
